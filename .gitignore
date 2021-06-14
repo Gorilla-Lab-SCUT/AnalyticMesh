@@ -1,0 +1,9 @@
+*.onnx
+!chair.onnx
+!lucy.onnx
+**/__pycache__
+**/.pytest_cache
+**/build
+**/dev
+**/tmp
+**/temp
