@@ -3,7 +3,7 @@
 > Analytic Marching is an exact meshing solution from neural networks. Compared to standard methods, it completely avoids geometric and topological errors that result from insufficient sampling, by means of mathematically guaranteed analysis.
 
 
-This repository gives an implementation of *Analytic Marching* algorithm. This algorithm is initially proposed in our conference paper [Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks](https://arxiv.org/abs/2002.06597), then finally improved in our journal paper: **Learning and Meshing from Deep Implicit Surface Networks Using an Efficient Implementation of Analytic Marching**.
+This repository gives an implementation of *Analytic Marching* algorithm. This algorithm is initially proposed in our conference paper [Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf), then finally improved in our journal paper: [Learning and Meshing from Deep Implicit Surface Networks Using an Efficient Implementation of Analytic Marching](https://arxiv.org/abs/2106.10031).
 
 ![](imgs/compare.png)
 
@@ -183,12 +183,23 @@ If you have any question, feel free to create an issue on github.
 If you find our works useful, please consider citing our papers.
 ```
 @inproceedings{
-    icml2020,
+    Lei2020,
     title = {Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks},
     author = {Jiabao Lei and Kui Jia},
     booktitle = {International Conference on Machine Learning 2020 {ICML-20}},
     year = {2020},
     month = {7}
 }
+
+@misc{
+    Lei2021,
+    title={Learning and Meshing from Deep Implicit Surface Networks Using an Efficient Implementation of Analytic Marching}, 
+    author={Jiabao Lei and Kui Jia and Yi Ma},
+    year={2021},
+    eprint={2106.10031},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
 ```
 
+> Contact: eejblei@mail.scut.edu.cn
