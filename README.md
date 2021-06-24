@@ -173,6 +173,13 @@ Some tips:
 - If CUDA runs out of memory, try setting `voxel_configs`. It will partition the space and solve them serially.
 - More details are commented in our source codes.
 
+# Use Analytic Marching in your own project
+
+There are generally three ways to use Analytic Marching.
+1. **Directly representing a single shape by a multi-layer perceptron.** For a single object, you can simply represent the shape as a single network. For example, you can directly fit a point cloud by a multi-layer perceptron. In this way, the weights of the network uniquely determine the shape.
+2. **Generating the weights of multi-layer perceptron from a hyper-network.** To learn from multiple shapes, one can use hyper-network to generate the weights of multi-layer perceptron in a learnable manner.
+3. **Re-parameterizing the latent code into the bias of the first layer.** To learn from multiple shapes, we can condition the network with a latent code input at the first layer (e.g. 3+256 -> 512 -> 512 -> 1). Note that the concatenated latent code can be re-parameterized and combined into the bias of the first layer. More specifically, the computation of the first layer can be re-parameterized as ![](https://latex.codecogs.com/gif.latex?\boldsymbol{y}=\textrm{ReLU}(\boldsymbol{W}[\boldsymbol{x};\boldsymbol{c}]&plus;\boldsymbol{b})=\textrm{ReLU}(\boldsymbol{W}\boldsymbol{x}&plus;\boldsymbol{b}')), where the newly computed bias is ![](https://latex.codecogs.com/gif.latex?\boldsymbol{b}'=\boldsymbol{W}\boldsymbol{c}&plus;\boldsymbol{b}).
+
 
 # About
 
