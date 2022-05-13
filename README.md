@@ -2,10 +2,10 @@
 
 > Analytic Marching is an exact meshing solution from neural networks. Compared to standard methods, it completely avoids geometric and topological errors that result from insufficient sampling, by means of mathematically guaranteed analysis.
 
+This repository gives an implementation of *Analytic Marching* algorithm. This algorithm is initially proposed in our conference paper [Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf), then finally improved in our journal paper: [Learning and Meshing from Deep Implicit Surface Networks Using an Efficient Implementation of Analytic Marching](https://ieeexplore.ieee.org/document/9650726).
 
-This repository gives an implementation of *Analytic Marching* algorithm. This algorithm is initially proposed in our conference paper [Analytic Marching: An Analytic Meshing Solution from Deep Implicit Surface Networks](http://proceedings.mlr.press/v119/lei20a/lei20a.pdf), then finally improved in our journal paper: [Learning and Meshing from Deep Implicit Surface Networks Using an Efficient Implementation of Analytic Marching](https://arxiv.org/abs/2106.10031).
-
-![](imgs/compare.png)
+> ![](imgs/compare.png)
+> This figure shows different meshing patterns obtained from different meshing methods. **AM:** Analytic Marching (ours); **GM:** Greedy Mesh; **MC:** Marching Cubes; **MT:** Marching Tetrahedra; **DC:** Dual Contouring. Interestingly, AM's pattern is seemingly irregular, where each line indicates a crease formed by the space-folding mechanism. Also, our mesh is exact, which means for every point sampled from the mesh surface, its level value is exactly zero.
 
 Our codes provide web pages for manipulating your models via graphic interface, and a backend for giving full control of the algorithm by writing python codes.
 
@@ -13,7 +13,7 @@ Our codes provide web pages for manipulating your models via graphic interface, 
 
 First please download our codes:
 ```
-git clone https://github.com/Karbo123/AnalyticMesh.git --depth=1
+git clone git@github.com:Gorilla-Lab-SCUT/AnalyticMesh.git --depth=1
 cd AnalyticMesh
 export AMROOT=`pwd`
 ```
@@ -21,7 +21,7 @@ export AMROOT=`pwd`
 ## Backend
 
 Backend gives a python binding of analytic marching. You can write simple python codes in your own project after compiling the backend.
-> Our implementation supports pytorch, and possibly also other deep learning frameworks (e.g. tensorflow), but we do not test other frameworks yet.
+> Our implementation supports pytorch, and possibly also other deep learning frameworks (e.g. tensorflow), because we use an Open Neural Network Exchange (ONNX) format to store model as file, but we haven't tested any other frameworks yet. If you are interested in other frameworks, welcome to make contribution.
 
 Requirements:
 - [python](https://www.python.org/)
@@ -185,8 +185,6 @@ There are generally three ways to use Analytic Marching.
 
 
 This repository is mainly maintained by Jiabao Lei (backend) and Yongyi Su (frontend).
-If you have any question, feel free to create an issue on github.
-
 If you find our works useful, please consider citing our papers.
 ```
 @inproceedings{
@@ -198,15 +196,16 @@ If you find our works useful, please consider citing our papers.
     month = {7}
 }
 
-@misc{
+@article{
     Lei2021,
+    author={Lei, Jiabao and Jia, Kui and Ma, Yi},
+    journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
     title={Learning and Meshing from Deep Implicit Surface Networks Using an Efficient Implementation of Analytic Marching}, 
-    author={Jiabao Lei and Kui Jia and Yi Ma},
     year={2021},
-    eprint={2106.10031},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
+    pages={1-1},
+    doi={10.1109/TPAMI.2021.3135007}
 }
 ```
 
+If you have any questions, feel free to create an issue on github, or you can also email me via:
 > Contact: eejblei@mail.scut.edu.cn
